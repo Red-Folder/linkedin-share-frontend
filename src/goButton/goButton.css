@@ -1,0 +1,10 @@
+.go-button {
+    font-size: 125px;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+
+.go-button:hover {
+    color: green;
+}

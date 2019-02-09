@@ -1,0 +1,11 @@
+.step-number {
+    border-width: 15px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50%;
+    font-size: 75px;
+    color: white;
+    margin: 15px;
+    width: 150px;
+    height: 150px;
+}

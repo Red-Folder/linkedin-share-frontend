@@ -1,0 +1,27 @@
+.step {
+    min-height: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 15px solid darkslategray;
+    border-width: 15px;
+    border-style: solid;
+    border-radius: 25px;
+}
+  
+.inactive-step {
+  border-color: darkslategray;
+  opacity: 0.5;
+}
+
+.active-step {
+  border-color: green;
+  opacity: 1;
+}
+
+.step-content {
+  text-align: left;
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 25px;
+}
