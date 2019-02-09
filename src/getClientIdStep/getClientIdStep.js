@@ -30,10 +30,11 @@ const onGo = (clientId) => {
         'redirect_uri=http://localhost:3000/auth/callback';
     sessionState.completed = true;
 
-    console.log(sessionState);
     setSessionState(sessionState);
 
-    console.log('Redirect user to ' + sessionState.authenticationUrl);
+    window.location = sessionState.authenticationUrl;
+
+    return null;
 }
 
 const GetClientIdStep = () => {
@@ -43,18 +44,23 @@ const GetClientIdStep = () => {
 
     const isActive = !sessionState.completed;
 
-    const heading = !sessionState.completed ? 'This is what we did' : 'We need your LinkedIn Client Id';
+    const heading = sessionState.completed ? 'This is what we did' : 'We need your LinkedIn Client Id';
 
     return (
         <Step id={1} isActive={isActive} onGo={() => onGo(clientId)}>
             <div className='client-id-step'>
                 <h2>{heading}</h2>
-                <label htmlFor='client-id'> LinkedIn Client Id:</label>
-                <input id='client-id'
-                    name='client-id'
-                    value={clientId}
-                    onChange={setClientId}
-                    placeholder='Enter your LinkedIn Client Id' />
+                <form>
+                    <div className='form-group'>
+                        <label htmlFor='client-id'> LinkedIn Client Id:</label>
+                        <input id='client-id'
+                            name='client-id'
+                            className='form-control'
+                            value={clientId}
+                            onChange={(event) => setClientId(event.target.value)}
+                            placeholder='Enter your LinkedIn Client Id' />
+                    </div>
+                </form>
                 <p>
                     On submit the following will happen:
                 </p>
